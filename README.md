@@ -3,7 +3,6 @@ This is a JavaScript library that aims to provide the same functionality as *Fir
 
 The main idea is to create a *Chrome DevTools extension*. And I have really no idea how to get that done, so if anyone is willing to help, let's do it!
 
-![working](http://127.0.0.1:9000/blog/shader-editor-images/snapshot.jpg)
 [![demo](http://www.clicktorelease.com/blog/shader-editor-images/snapshot.jpg)](http://www.clicktorelease.com/tmp/shader-editor)
 
 You can read more about this in [Creating a Plug'n Play Live WebGL Shader Editor](http://www.clicktorelease.com/blog/live-webgl-shader-editor)
