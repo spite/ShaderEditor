@@ -1,0 +1,29 @@
+#shaderEditor *{ font-family: 'Droid Sans Mono', monospace; font-size: 12px;}
+#shaderEditor{ box-sizing: border-box; position: absolute; left: 0; top: 0; right: 0; bottom: 0; display: none; opacity: 1;}
+#shaderEditor:hover{ opacity: 1 ;}
+#shaderEditor #programList{ position: absolute; left: 0; top: 30px; width: 200px; bottom: 0; border-right: 1px solid #dedede;}
+#shaderEditor #programList li{ padding: 10px; border-top: 1px solid #dedede; border-bottom: 1px solid #404040; width: 100%; cursor: pointer;}
+#shaderEditor #editorContainer{ position: absolute; left: 200px; top: 0; right: 0; bottom: 0 ;}
+#shaderEditor .cm-s-default{ position: absolute; top: 30px; bottom: 0; height: calc(100% - 30px); width: 50% ;}
+#shaderEditor #vsEditor, #shaderEditor #fsEditor{ border-top: 1px solid #dedede; border-right: 1px solid #dedede;}
+#shaderEditor #vsEditor{ left: 0; }
+#shaderEditor #fsEditor{ left: 50%; }
+
+#shaderEditor .programs-title, #shaderEditor .vs-title, #shaderEditor .fs-title{ left: 0; position: absolute; padding: 10px 10px 10px 35px }
+#shaderEditor .vs-title{ left: 0;}
+#shaderEditor .fs-title{ left: 50%;}
+
+.cm-s-default{ background-color: rgba( 0,0,0,.5); color: white;}
+.cm-s-default *{ color: white; background-color: transparent;}
+
+.cm-s-default span.cm-keyword {color: #bbf;}
+.cm-s-default span.cm-number {color: #fbb;}
+.cm-s-default span.cm-def {color: #55f;}
+.cm-s-default span.cm-comment {color: #8ff;}
+.cm-s-default span.cm-operator {color: #5b5;}
+.cm-s-default span.cm-meta {color: #8f8;}
+.cm-s-default span.cm-qualifier {color: #888;}
+.cm-s-default span.cm-builtin {color: #fbf;}
+.cm-s-default span.cm-bracket {color: #bbb;}
+
+.errorMessage{ background-color: red;}

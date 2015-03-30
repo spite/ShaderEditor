@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Shader Editor</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			*{ box-sizing: border-box; margin: 0; padding: 0;}
+			body {
+				background-color: #000;
+				color: #fff;
+				margin: 0px;
+				padding: 0;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+
+	</body>
+	<script src="deps/three.js"></script>
+	<script src="deps/ShaderEditor.js"></script>
+
+	<script>
+	
+		var renderer = new THREE.WebGLRenderer( { antialias: true } );
+		renderer.setPixelRatio( window.devicePixelRatio );
+		renderer.devicePixelRatio = window.devicePixelRatio;
+	
+		document.body.appendChild( renderer.domElement );
+
+		var scene = new THREE.Scene();
+
+		var camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 );
+		camera.position.set( 50, 50, 50 );
+		camera.target = new THREE.Vector3();
+		camera.lookAt( camera.target );
+
+		var geometry = new THREE.BoxGeometry( 50,50,50 );
+
+		var material = new THREE.MeshNormalMaterial();
+		var cube = new THREE.Mesh( geometry, material );
+		cube.position.x = -50;
+		scene.add( cube );
+
+		var material2 = new THREE.MeshBasicMaterial( { color: 0xb70000 });
+		var cube2 = new THREE.Mesh( geometry, material2 );
+		cube2.position.x = 50;
+		scene.add( cube2 );
+
+		function animate() {
+
+			cube.rotation.y += 0.01;
+			cube2.rotation.z += 0.01;
+
+			requestAnimationFrame( animate );
+			render();
+
+		}
+
+		function render() {
+
+			renderer.render( scene, camera );
+
+		}
+
+		onWindowResize();
+		animate();
+
+		function onWindowResize() {
+
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			render();
+
+		}
+
+		window.addEventListener( 'resize', onWindowResize, false );
+
+	</script>
+</html>
